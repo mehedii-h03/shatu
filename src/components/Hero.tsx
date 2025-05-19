@@ -1,19 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
-// Import from @heroicons/react instead of lucide-react
 import {
   FaLinkedin,
   FaInstagram,
   FaFacebook,
   FaTelegram,
 } from "react-icons/fa";
+import Image from "next/image";
+
+import ProfileImage from "@/assets/profileImage.webp";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const fullText =
-    "Heelping e-commerce and personal brands grow through strategic marketing and impactful campaigns.";
+    "Helping e-commerce and personal brands grow through strategic marketing and impactful campaigns.";
 
   useEffect(() => {
     let index = 0;
@@ -30,7 +31,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="text-white min-h-[80vh] flex items-center py-12 px-4 md:px-8">
+    <div className="text-white h-full md:min-h-[80vh] flex items-center py-5 md:py-12 px-4 md:px-8">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
         <div className="space-y-6">
@@ -40,7 +41,6 @@ const Hero = () => {
               Fardous Akter Shatu
             </h1>
             <div className="flex items-center space-x-2 mt-2">
-              <div className="h-1 w-16 bg-teal-500"></div>
               <p className="text-xl text-teal-300 font-semibold">
                 Social Media Marketing Manager
               </p>
@@ -119,29 +119,13 @@ const Hero = () => {
             <div className="absolute -z-10 w-32 h-32 bg-purple-600/20 rounded-full blur-3xl -top-10 -right-10"></div>
 
             {/* Image with border */}
-            <div className="relative z-10 border-4 border-teal-500 rounded-2xl overflow-hidden w-full max-w-md aspect-square">
+            <div className="relative z-10 border-2 border-teal-500 rounded-2xl overflow-hidden w-full max-w-md aspect-square">
               <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-purple-900/30 mix-blend-overlay z-10"></div>
 
               <div className="w-full h-full relative">
-                {/* <Image
-                  src="https://images.pexels.com/photos/31984626/pexels-photo-31984626/free-photo-of-artistic-black-and-white-portrait-with-light-play.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Fardous Akter Shatu - Social Media Marketing Manager"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                  className="object-cover"
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                /> */}
                 <div className="relative z-10 border-4 border-teal-500 rounded-2xl overflow-hidden w-full max-w-md aspect-square">
-                  <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-purple-900/30 mix-blend-overlay"></div>
-                  <img
-                    src="https://images.pexels.com/photos/31984626/pexels-photo-31984626/free-photo-of-artistic-black-and-white-portrait-with-light-play.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Fardous Akter Shatu - Social Media Marketing Manager"
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-purple-900/30 mix-blend-overlay z-10"></div>
+                  <Image src={ProfileImage} alt="profile image" />
                 </div>
               </div>
             </div>
