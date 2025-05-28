@@ -104,7 +104,7 @@ const Testimonials = () => {
   return (
     <section
       ref={testimonialsRef}
-      className="bg-gray-950 text-white py-16 px-4 md:px-8 relative overflow-hidden"
+      className="text-white py-16 px-4 md:px-8 relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-green-600/5 rounded-full blur-3xl"></div>
