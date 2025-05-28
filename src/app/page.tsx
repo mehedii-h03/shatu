@@ -1,5 +1,13 @@
+import About from "@/components/About";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
+import Expertise from "@/components/Expertise";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Portfolio from "@/components/Portfolio";
+import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
+import { Contact } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,6 +19,14 @@ export default function Home() {
       />
       <Navbar />
       <Hero />
+      <About />
+      <Experience />
+      <Services />
+      <Portfolio />
+      <Education />
+      <Expertise />
+      <Testimonials />
+      <Contact />
     </div>
   );
 }
