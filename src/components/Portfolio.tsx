@@ -169,9 +169,9 @@ const Portfolio = () => {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <p className="text-teal-400 font-medium mb-2 tracking-wide">
+            {/* <p className="text-teal-400 font-medium mb-2 tracking-wide">
               PORTFOLIO
-            </p>
+            </p> */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-4">
               My Work
             </h2>
@@ -338,7 +338,7 @@ const Portfolio = () => {
         )}
 
         {/* Contact CTA */}
-        <div
+        {/* <div
           className={`text-center mt-16 transform transition-all duration-1000 delay-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
@@ -371,7 +371,7 @@ const Portfolio = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

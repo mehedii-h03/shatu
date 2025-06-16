@@ -1,335 +1,235 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+
+import { useState } from "react";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSocial, setHoveredSocial] = useState<null | string>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     subject: "",
     message: "",
   });
-  const contactRef = useRef(null);
 
-  // Intersection Observer for scroll-triggered animations
-  useEffect(() => {
-    setIsVisible(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1, rootMargin: "50px" }
-    );
-
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
-
-    return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
-      }
-    };
-  }, []);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-//   const handleSubmit = (
-//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-//   ) => {
-//     e.preventDefault();
-//     console.log("Form submitted:", formData);
-//   };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const contactInfo = [
-    {
-      icon: "📞",
-      label: "Phone",
-      value: "+8801874262668",
-      gradient: "from-green-500 to-emerald-500",
-      link: "tel:+8801874262668",
-    },
-    {
-      icon: "✉️",
-      label: "Email",
-      value: "fardousaktershatu@gmail.com",
-      gradient: "from-blue-500 to-cyan-500",
-      link: "mailto:fardousaktershatu@gmail.com",
-    },
-    {
-      icon: "📍",
-      label: "Address",
-      value: "Dhaka, Bangladesh",
-      gradient: "from-purple-500 to-indigo-500",
-      link: null,
-    },
-  ];
-
-  const socialLinks = [
-    {
-      name: "LinkedIn",
-      icon: "💼",
-      url: "https://www.linkedin.com/in/fardous-akter-shatu",
-      gradient: "from-blue-600 to-blue-700",
-      hoverColor: "hover:border-blue-500",
-    },
-    {
-      name: "Facebook",
-      icon: "📘",
-      url: "https://www.facebook.com/FardousAkterShatu",
-      gradient: "from-blue-500 to-blue-600",
-      hoverColor: "hover:border-blue-400",
-    },
-    {
-      name: "Instagram",
-      icon: "📸",
-      url: "#", // You mentioned you'll provide the new account link
-      gradient: "from-pink-500 to-purple-500",
-      hoverColor: "hover:border-pink-500",
-    },
-    {
-      name: "Telegram",
-      icon: "💬",
-      url: "https://t.me/F_Shatu",
-      gradient: "from-cyan-500 to-blue-500",
-      hoverColor: "hover:border-cyan-500",
-    },
-  ];
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      // You can add actual form submission logic here
+    }, 2000);
+  };
 
   return (
     <section
-      ref={contactRef}
-      className="bg-gray-950 text-white py-16 px-4 md:px-8 relative overflow-hidden"
+      id="contact"
+      className="text-white py-16 md:py-24 px-4 md:px-8 relative overflow-hidden"
     >
-      {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-600/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-pink-600/5 rounded-full blur-3xl"></div>
+      {/* Minimal decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl"></div>
+      </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm">
-            CONTACT
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-3">
-            Get in Touch
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-4">
+            Let&apos;s Work Together
           </h2>
-          <p className="text-gray-400 max-w-lg mx-auto">
-            Ready to start your next project? Let&apos;s discuss how I can help
-            you grow your business
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Ready to elevate your brand? Get in touch and let&apos;s create something
+            amazing together.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Contact Information */}
-          <div
-            className={`transform transition-all duration-700 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-8 opacity-0"
-            }`}
-          >
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-blue-500 transition-all duration-300 group h-full">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-300 transition-colors">
-                  Contact Information
-                </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                  Feel free to reach out through any of these channels
-                </p>
-              </div>
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-teal-400 mb-8">
+                Get In Touch
+              </h3>
 
+              {/* Contact Items */}
               <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-4 p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-all duration-300 group/item"
-                  >
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-br ${info.gradient} rounded-lg flex items-center justify-center text-xl group-hover/item:scale-110 transition-transform duration-300`}
-                    >
-                      {info.icon}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-gray-400 text-sm font-medium mb-1">
-                        {info.label}
-                      </p>
-                      {info.link ? (
-                        <a
-                          href={info.link}
-                          className="text-white hover:text-blue-400 transition-colors font-medium"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-white font-medium">{info.value}</p>
-                      )}
-                    </div>
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-gray-800 p-3 rounded-full group-hover:bg-teal-700 transition-colors">
+                    <FaEnvelope className="w-5 h-5 text-teal-400" />
                   </div>
-                ))}
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Email</h4>
+                    <a
+                      href="mailto:hello@fardous.com"
+                      className="text-gray-300 hover:text-teal-400 transition-colors"
+                    >
+                      hello@fardous.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-gray-800 p-3 rounded-full group-hover:bg-teal-700 transition-colors">
+                    <FaPhone className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Phone</h4>
+                    <a
+                      href="tel:+1234567890"
+                      className="text-gray-300 hover:text-teal-400 transition-colors"
+                    >
+                      +123 456 7890
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4 group">
+                  <div className="bg-gray-800 p-3 rounded-full group-hover:bg-teal-700 transition-colors">
+                    <FaMapMarkerAlt className="w-5 h-5 text-teal-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Location</h4>
+                    <p className="text-gray-300">Dhaka, Bangladesh</p>
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Status Card */}
+            {/* <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
+                <p className="font-semibold text-white">
+                  Available for Projects
+                </p>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Currently accepting new clients for 2025. Let&apos;s discuss your
+                project!
+              </p>
+            </div> */}
           </div>
 
           {/* Contact Form */}
-          <div
-            className={`transform transition-all duration-700 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-8 opacity-0"
-            }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-pink-500 transition-all duration-300 group h-full">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-pink-300 transition-colors">
-                  Send a Message
-                </h3>
-                <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                  Let&apos;s discuss your project requirements
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                      placeholder="Your phone number"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                      placeholder="Project subject"
-                    />
-                  </div>
+          <div className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700/50 backdrop-blur-sm">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    placeholder="Your name"
+                  />
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 text-sm font-medium mb-2">
-                    Message
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Email
                   </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-blue-500 focus:outline-none transition-colors duration-300 resize-none"
-                    placeholder="Tell me about your project..."
-                  ></textarea>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    placeholder="your@email.com"
+                  />
                 </div>
-
-                <button
-                //   onClick={handleSubmit}
-                  className="w-full bg-gradient-to-r from-blue-500 to-pink-500 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-pink-600 transform hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-                >
-                  Send Message 🚀
-                </button>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Social Media Links */}
-        <div
-          className={`transform transition-all duration-700 mt-12 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-          style={{ transitionDelay: "400ms" }}
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-bold mb-2">Connect With Me</h3>
-            <p className="text-gray-400">Follow me on social media</p>
-          </div>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                  placeholder="What's this about?"
+                />
+              </div>
 
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group relative`}
-                onMouseEnter={() => setHoveredSocial(social.name)}
-                onMouseLeave={() => setHoveredSocial(null)}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-teal-600 hover:bg-teal-700 disabled:bg-teal-800 text-white py-3 px-6 rounded-lg font-medium transition-all transform hover:scale-[1.02] disabled:scale-100 flex items-center justify-center space-x-2"
               >
-                <div
-                  className={`w-14 h-14 bg-gradient-to-br ${social.gradient} rounded-xl flex items-center justify-center text-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg border-2 border-transparent ${social.hoverColor}`}
-                >
-                  {social.icon}
-                </div>
-
-                {/* Tooltip */}
-                <div
-                  className={`absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-3 rounded-lg transition-all duration-300 ${
-                    hoveredSocial === social.name
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-2 pointer-events-none"
-                  }`}
-                >
-                  {social.name}
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
-                </div>
-              </a>
-            ))}
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane className="w-4 h-4" />
+                    <span>Send Message</span>
+                  </>
+                )}
+              </button>
+            </form>
           </div>
         </div>
       </div>

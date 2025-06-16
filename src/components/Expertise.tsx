@@ -110,9 +110,9 @@ const Expertise = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-emerald-400 font-medium mb-2 tracking-wide text-sm">
+          {/* <p className="text-emerald-400 font-medium mb-2 tracking-wide text-sm">
             MY EXPERTISE
-          </p>
+          </p> */}
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-500 to-purple-500 bg-clip-text text-transparent mb-3">
             Skills & Expertise
           </h2>
@@ -230,7 +230,7 @@ const Expertise = () => {
         </div>
 
         {/* Summary Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center hover:border-emerald-500 transition-all duration-300 group">
             <div className="text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent mb-2">
               95.5%
@@ -257,10 +257,10 @@ const Expertise = () => {
               Expert Level Skills (95%+)
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Summary */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-2xl mx-auto hover:border-emerald-500 transition-all duration-300 group">
             <div className="flex items-center justify-center mb-3">
               <span className="text-2xl mr-2">💪</span>
@@ -273,7 +273,7 @@ const Expertise = () => {
               media marketing disciplines
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -110,9 +110,9 @@ const About = () => {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <p className="text-teal-400 font-medium mb-2 tracking-wide">
+            {/* <p className="text-teal-400 font-medium mb-2 tracking-wide">
               ABOUT
-            </p>
+            </p> */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-8">
               About Me
             </h2>
@@ -147,121 +147,74 @@ const About = () => {
         </div>
 
         {/* About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Decorative Element */}
-          <div
-            className={`transform transition-all duration-1000 delay-800 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-12 opacity-0"
-            }`}
-          >
-            <div className="relative">
-              {/* Animated circles */}
-              <div className="relative w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-purple-500/20 rounded-full blur-2xl animate-pulse"></div>
-                <div className="relative bg-gray-800 border-2 border-teal-500/30 rounded-3xl p-8 backdrop-blur-sm">
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-4 h-4 bg-teal-500 rounded-full animate-bounce"></div>
-                      <p className="text-teal-300 font-medium">
-                        Social Media Strategy
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-4 h-4 bg-purple-500 rounded-full animate-bounce delay-200"></div>
-                      <p className="text-purple-300 font-medium">
-                        Content Creation
-                      </p>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-4 h-4 bg-pink-500 rounded-full animate-bounce delay-400"></div>
-                      <p className="text-pink-300 font-medium">Brand Growth</p>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-4 h-4 bg-blue-500 rounded-full animate-bounce delay-600"></div>
-                      <p className="text-blue-300 font-medium">
-                        Data Analytics
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div
+          className={`transform transition-all duration-1000 delay-1000 ${
+            isVisible ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0"
+          }`}
+        >
+          <div className="space-y-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-teal-300 mb-6">
+              Hi, I&apos;m Fardous Akter Shatu
+            </h3>
+
+            <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+              <p className="hover:text-white transition-colors duration-300">
+                I&apos;m a passionate{" "}
+                <span className="text-teal-400 font-semibold">
+                  Social Media Marketing Manager
+                </span>{" "}
+                with over two years of experience driving brand growth. I
+                specialize in crafting customized strategies that blend content
+                creation, community engagement, and targeted campaigns across
+                platforms like{" "}
+                <span className="text-teal-400">
+                  Facebook, Instagram, and Pinterest
+                </span>
+                .
+              </p>
+
+              <p className="hover:text-white transition-colors duration-300">
+                By combining{" "}
+                <span className="text-purple-400 font-semibold">
+                  data-driven insights
+                </span>{" "}
+                with creative solutions, I help e-commerce and personal brands
+                strengthen their social media presence, build genuine
+                connections, and achieve measurable results.
+              </p>
+
+              <p className="hover:text-white transition-colors duration-300">
+                Whether it&apos;s increasing brand awareness, boosting
+                engagement, or driving conversions, I focus on delivering
+                strategies that align with your unique business goals and
+                <span className="text-teal-400 font-semibold">
+                  {" "}
+                  long-term vision
+                </span>
+                .
+              </p>
             </div>
-          </div>
 
-          {/* Right Side - Text Content */}
-          <div
-            className={`transform transition-all duration-1000 delay-1000 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-12 opacity-0"
-            }`}
-          >
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-teal-300 mb-6">
-                Hi, I&apos;m Fardous Akter Shatu
-              </h3>
-
-              <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
-                <p className="hover:text-white transition-colors duration-300">
-                  I&apos;m a passionate{" "}
-                  <span className="text-teal-400 font-semibold">
-                    Social Media Marketing Manager
-                  </span>{" "}
-                  with over two years of experience driving brand growth. I
-                  specialize in crafting customized strategies that blend
-                  content creation, community engagement, and targeted campaigns
-                  across platforms like{" "}
-                  <span className="text-teal-400">
-                    Facebook, Instagram, and Pinterest
-                  </span>
-                  .
-                </p>
-
-                <p className="hover:text-white transition-colors duration-300">
-                  By combining{" "}
-                  <span className="text-purple-400 font-semibold">
-                    data-driven insights
-                  </span>{" "}
-                  with creative solutions, I help e-commerce and personal brands
-                  strengthen their social media presence, build genuine
-                  connections, and achieve measurable results.
-                </p>
-
-                <p className="hover:text-white transition-colors duration-300">
-                  Whether it&apos;s increasing brand awareness, boosting
-                  engagement, or driving conversions, I focus on delivering
-                  strategies that align with your unique business goals and
-                  <span className="text-teal-400 font-semibold">
-                    {" "}
-                    long-term vision
-                  </span>
-                  .
-                </p>
-              </div>
-
-              <div className="pt-6">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white py-3 px-8 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25"
+            <div className="pt-6">
+              <a
+                href="#contact"
+                className="inline-flex items-center bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white py-3 px-8 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/25"
+              >
+                Let&apos;s Work Together
+                <svg
+                  className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  Let&apos;s Work Together
-                  <svg
-                    className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>

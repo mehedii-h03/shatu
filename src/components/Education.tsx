@@ -76,9 +76,9 @@ const Education = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-teal-400 font-medium mb-2 tracking-wide text-sm">
+          {/* <p className="text-teal-400 font-medium mb-2 tracking-wide text-sm">
             EDUCATION
-          </p>
+          </p> */}
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-teal-500 to-purple-500 bg-clip-text text-transparent mb-3">
             Education
           </h2>
@@ -178,7 +178,7 @@ const Education = () => {
         </div>
 
         {/* Bottom Summary */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-xl mx-auto hover:border-teal-500 transition-all duration-300 group">
             <div className="flex items-center justify-center mb-3">
               <span className="text-2xl mr-2">🧠</span>
@@ -190,7 +190,7 @@ const Education = () => {
               Scientific background enhancing data-driven marketing strategies
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

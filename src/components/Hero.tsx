@@ -14,7 +14,7 @@ import ProfileImage from "@/assets/profileImage.webp";
 const Hero = () => {
   const [typedText, setTypedText] = useState("");
   const fullText =
-    "Helping e-commerce and personal brands grow through strategic marketing and impactful campaigns.";
+    "Heelping e-commerce and personal brands grow through strategic marketing and impactful campaigns.";
 
   useEffect(() => {
     let index = 0;
@@ -115,8 +115,8 @@ const Hero = () => {
         <div className="relative flex justify-center md:justify-end mt-8 md:mt-0">
           <div className="relative">
             {/* Decorative elements */}
-            <div className="absolute -z-10 w-64 h-64 bg-teal-600/20 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute -z-10 w-32 h-32 bg-purple-600/20 rounded-full blur-3xl -top-10 -right-10"></div>
+            {/* <div className="absolute -z-10 w-64 h-64 bg-teal-600/20 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div className="absolute -z-10 w-32 h-32 bg-purple-600/20 rounded-full blur-3xl -top-10 -right-10"></div> */}
 
             {/* Image with border */}
             <div className="relative z-10 border-2 border-teal-500 rounded-2xl overflow-hidden w-full max-w-md aspect-square">
@@ -125,22 +125,26 @@ const Hero = () => {
               <div className="w-full h-full relative">
                 <div className="relative z-10 border-4 border-teal-500 rounded-2xl overflow-hidden w-full max-w-md aspect-square">
                   <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 to-purple-900/30 mix-blend-overlay z-10"></div>
-                  <Image src={ProfileImage} alt="profile image" />
+                  <Image
+                    src={ProfileImage}
+                    alt="profile image"
+                    className="object-center"
+                  />
                 </div>
               </div>
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -bottom-4 -left-4 bg-gray-800 p-4 rounded-lg shadow-lg border-l-4 border-teal-500 z-20">
+            {/* <div className="absolute -bottom-4 -left-4 bg-gray-800 p-4 rounded-lg shadow-lg border-l-4 border-teal-500 z-20">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
                 <p className="text-sm font-medium">Available for projects</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="absolute -top-4 -right-4 bg-gray-800 p-3 rounded-lg shadow-lg border-r-4 border-purple-500 rotate-3 z-20">
+            {/* <div className="absolute -top-4 -right-4 bg-gray-800 p-3 rounded-lg shadow-lg border-r-4 border-purple-500 rotate-3 z-20">
               <p className="text-sm font-medium">5+ Years Experience</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

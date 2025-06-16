@@ -98,9 +98,9 @@ const Services = () => {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <p className="text-teal-400 font-medium mb-2 tracking-wide">
+            {/* <p className="text-teal-400 font-medium mb-2 tracking-wide">
               SERVICES
-            </p>
+            </p> */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-4">
               My Services
             </h2>
@@ -199,7 +199,7 @@ const Services = () => {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          <div className="bg-gray-900 border border-gray-700 rounded-3xl p-8 max-w-2xl mx-auto hover:border-teal-500 transition-all duration-500 group">
+          {/* <div className="bg-gray-900 border border-gray-700 rounded-3xl p-8 max-w-2xl mx-auto hover:border-teal-500 transition-all duration-500 group">
             <h3 className="text-2xl font-bold mb-4 group-hover:text-teal-300 transition-colors duration-300">
               Ready to Elevate Your Brand?
             </h3>
@@ -234,7 +234,7 @@ const Services = () => {
                 View My Work
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

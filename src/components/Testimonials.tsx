@@ -113,9 +113,9 @@ const Testimonials = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm">
+          {/* <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm">
             TESTIMONIALS
-          </p>
+          </p> */}
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-3">
             Client Reviews
           </h2>
@@ -202,7 +202,7 @@ const Testimonials = () => {
         </div>
 
         {/* Bottom Summary */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-xl mx-auto hover:border-blue-500 transition-all duration-300 group">
             <div className="flex items-center justify-center mb-3">
               <span className="text-2xl mr-2">💬</span>
@@ -215,7 +215,7 @@ const Testimonials = () => {
               professional excellence
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
