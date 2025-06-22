@@ -93,8 +93,9 @@ const About = () => {
 
   return (
     <section
+      id={"about"}
       ref={aboutRef}
-      className="bg-gray-900 text-white py-8 md:py-16 px-4 md:px-8 relative overflow-hidden rounded-xl"
+      className=" text-white py-8 md:py-16 px-4 md:px-8 relative overflow-hidden rounded-xl"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-600/5 rounded-full blur-3xl"></div>

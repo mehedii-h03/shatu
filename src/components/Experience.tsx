@@ -190,22 +190,6 @@ const Experience = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Summary */}
-        {/* <div className="text-center mt-12">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-xl mx-auto hover:border-blue-500 transition-all duration-300 group">
-            <div className="flex items-center justify-center mb-3">
-              <span className="text-2xl mr-2">🚀</span>
-              <h3 className="text-lg font-bold group-hover:text-blue-300 transition-colors">
-                Growing Digital Marketing Expertise
-              </h3>
-            </div>
-            <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-              Specializing in social media marketing and Facebook advertising
-              across multiple industries
-            </p>
-          </div>
-        </div> */}
       </div>
     </section>
   );

@@ -1,12 +1,11 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Education from "@/components/Education";
-import Experience from "@/components/Experience";
-import Expertise from "@/components/Expertise";
+import ExpertiseTools from "@/components/ExpertiseTools";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Portfolio from "@/components/Portfolio";
+import ResumeComponent from "@/components/ResumeComponent";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 
@@ -22,11 +21,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <Experience />
+        <ResumeComponent />
         <Services />
         <Portfolio />
-        <Education />
-        <Expertise />
+        <ExpertiseTools />
         <Testimonials />
         <Contact />
       </div>

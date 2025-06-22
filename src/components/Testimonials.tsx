@@ -1,224 +1,152 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 
-const Testimonials = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<null | number>(null);
-  const testimonialsRef = useRef(null);
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination, Autoplay } from "swiper/modules";
 
-  // Intersection Observer for scroll-triggered animations
-  useEffect(() => {
-    setIsVisible(true);
+const testimonials = [
+  {
+    name: "Shohag Islam",
+    role: "Owner, Eureca Fashion",
+    text: "I worked with Shatu to set up my business page including logo design, ads, and page management. Very professional and sincere.",
+  },
+  {
+    name: "Tasnina Trisha",
+    role: "CEO, Ahliya's Home Schooling",
+    text: "She is always sincere in her work. I've taken services for Instagram and Facebook. Very pleased with the results.",
+  },
+  {
+    name: "Marian Akter",
+    role: "Graphics Designer",
+    text: "Shatu helped me a lot with optimizing my social media presence. Highly recommended!",
+  },
+  {
+    name: "Farah Sharna",
+    role: "Graphics Designer",
+    text: "Handled my Facebook page very well. Extremely sincere and dedicated. May Allah bless her.",
+  },
+  {
+    name: "Anonymous Client",
+    role: "Business Owner",
+    text: "She manages my marketing and campaigns with great responsibility. Perfect for reliable digital services.",
+  },
+];
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1, rootMargin: "50px" }
-    );
-
-    if (testimonialsRef.current) {
-      observer.observe(testimonialsRef.current);
-    }
-
-    return () => {
-      if (testimonialsRef.current) {
-        observer.unobserve(testimonialsRef.current);
-      }
-    };
-  }, []);
-
-  const testimonialData = [
-    {
-      id: 1,
-      name: "Shohag Islam",
-      position: "Owner of Eureca Fashion",
-      testimonial:
-        "I worked with Shatu to set up my business page, including logo design, cover design, ad campaigns, and overall page management. She handled everything very professionally and with great sincerity. I am fully satisfied with her service.",
-      icon: "👔",
-      gradient: "from-blue-500 to-cyan-500",
-      borderColor: "border-blue-500",
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "Tasnina Trisha",
-      position: "CEO of Ahliya's Home Schooling",
-      testimonial:
-        "May Allah bless her time and work with barakah. I have always found her sincere in her work. I have taken services for both Instagram and Facebook. Alhamdulillah, I'm pleased with her consultation as well.",
-      icon: "📚",
-      gradient: "from-green-500 to-emerald-500",
-      borderColor: "border-green-500",
-      rating: 5,
-    },
-    {
-      id: 3,
-      name: "Marian Akter",
-      position: "Graphics Designer",
-      testimonial:
-        "Shatu is truly dedicated to her work. She has helped me a lot with my social media optimization (Facebook and LinkedIn). Wishing her continued success!",
-      icon: "🎨",
-      gradient: "from-purple-500 to-indigo-500",
-      borderColor: "border-purple-500",
-      rating: 5,
-    },
-    {
-      id: 4,
-      name: "Farah Sharna",
-      position: "Graphics Designer",
-      testimonial:
-        "Shatu did some work on my Facebook, and Ma Sha Allah, she handled everything very professionally. She's also incredibly sincere and dedicated. May Allah bless her with abundant barakah.",
-      icon: "✨",
-      gradient: "from-pink-500 to-rose-500",
-      borderColor: "border-pink-500",
-      rating: 5,
-    },
-    {
-      id: 5,
-      name: "Anonymous Client",
-      position: "Business Owner",
-      testimonial:
-        "For the past year, Shatu has been handling the promotion, marketing strategies, and ad campaigns for my business page with great sincerity and responsibility. If you're looking for reliable digital marketing services or consultation, you can confidently take her support.",
-      icon: "🚀",
-      gradient: "from-orange-500 to-red-500",
-      borderColor: "border-orange-500",
-      rating: 5,
-    },
-  ];
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <span
-        key={i}
-        className={`text-lg ${
-          i < rating ? "text-yellow-400" : "text-gray-600"
-        }`}
-      >
-        ⭐
-      </span>
-    ));
-  };
-
+export default function Testimonials() {
   return (
-    <section
-      ref={testimonialsRef}
-      className="text-white py-16 px-4 md:px-8 relative overflow-hidden"
-    >
-      {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-green-600/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-purple-600/5 rounded-full blur-3xl"></div>
-
-      <div className="container mx-auto max-w-6xl relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          {/* <p className="text-blue-400 font-medium mb-2 tracking-wide text-sm">
-            TESTIMONIALS
-          </p> */}
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-3">
-            Client Reviews
+    <section className="py-20 px-4 text-white relative">
+      <div className="relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-500 to-purple-500 bg-clip-text text-transparent mb-3">
+            Testimonials
           </h2>
-          <p className="text-gray-400 max-w-lg mx-auto">
-            What my clients say about my work
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Don`&apos;t just take our word for it - hear what our clients have
+            to say about their experience
           </p>
         </div>
 
-        {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonialData.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={`transform transition-all duration-700 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
-              }`}
-              style={{ transitionDelay: `${index * 200}ms` }}
-              onMouseEnter={() => setHoveredCard(testimonial.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div
-                className={`bg-gray-900 border-2 ${
-                  hoveredCard === testimonial.id
-                    ? testimonial.borderColor
-                    : "border-gray-800"
-                } rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-[1.02] group h-full relative`}
-              >
-                {/* Quote Icon */}
-                <div className="absolute -top-2 -right-2">
-                  <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center border border-gray-700">
-                    <span className="text-blue-400 text-lg">&quot;</span>
-                  </div>
-                </div>
-
-                {/* Header Section */}
-                <div className="mb-4">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-br ${testimonial.gradient} rounded-xl flex items-center justify-center text-xl transform transition-all duration-300 group-hover:scale-110`}
-                    >
-                      {testimonial.icon}
+        {/* Testimonials Slider */}
+        <div className="relative">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              1024: { slidesPerView: 3, spaceBetween: 28 },
+              1280: { slidesPerView: 3, spaceBetween: 32 },
+            }}
+            className="!pb-16"
+          >
+            {testimonials.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="h-[320px]">
+                  <div className="h-full flex flex-col justify-between bg-gradient-to-br from-[#1e1e32] to-[#252540] rounded-2xl p-8 shadow-xl border border-gray-800/50 backdrop-blur-sm">
+                    {/* Quote Icon */}
+                    <div className="mb-6">
+                      <svg
+                        className="w-8 h-8 text-purple-400 opacity-60"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+                      </svg>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white group-hover:text-gray-100 transition-colors leading-tight">
-                        {testimonial.name}
-                      </h3>
-                      <p className="text-gray-400 text-sm font-medium">
-                        {testimonial.position}
+
+                    {/* Testimonial Text */}
+                    <div className="flex-grow mb-8">
+                      <p className="text-gray-300 leading-relaxed text-base font-medium">
+                        &quot;{item.text}&quot;
                       </p>
                     </div>
+
+                    {/* Client Info */}
+                    <div className="flex items-center">
+                      <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
+                        {item.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg text-white mb-1">
+                          {item.name}
+                        </h4>
+                        <p className="text-sm text-purple-300 font-medium">
+                          {item.role}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Star Rating */}
+                    <div className="flex items-center mt-4 pt-4 border-t border-gray-700/50">
+                      <div className="flex space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-4 h-4 text-yellow-400 fill-current"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <span className="text-sm text-gray-400 ml-2">5.0</span>
+                    </div>
                   </div>
                 </div>
-
-                {/* Rating */}
-                <div className="flex items-center justify-center mb-4">
-                  {renderStars(testimonial.rating)}
-                </div>
-
-                {/* Testimonial Text */}
-                <div className="mb-4">
-                  <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">
-                    &quot;{testimonial.testimonial}&quot;
-                  </p>
-                </div>
-
-                {/* Hover Effect - Bottom Border */}
-                <div
-                  className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${
-                    testimonial.gradient
-                  } rounded-b-2xl transition-all duration-500 ${
-                    hoveredCard === testimonial.id ? "w-full" : "w-0"
-                  }`}
-                ></div>
-
-                {/* Floating Elements */}
-                <div
-                  className={`absolute -bottom-1 -right-1 w-3 h-3 bg-gradient-to-r ${testimonial.gradient} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-pulse`}
-                ></div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-
-        {/* Bottom Summary */}
-        {/* <div className="text-center mt-12">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 max-w-xl mx-auto hover:border-blue-500 transition-all duration-300 group">
-            <div className="flex items-center justify-center mb-3">
-              <span className="text-2xl mr-2">💬</span>
-              <h3 className="text-lg font-bold group-hover:text-blue-300 transition-colors">
-                Trusted by Amazing Clients
-              </h3>
-            </div>
-            <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-              Building lasting relationships through dedicated service and
-              professional excellence
-            </p>
-          </div>
-        </div> */}
       </div>
+
+      <style jsx global>{`
+        .swiper-pagination {
+          position: relative !important;
+          margin-top: 2rem !important;
+          text-align: center !important;
+        }
+        .swiper-pagination-bullet {
+          width: 10px !important;
+          height: 10px !important;
+          margin: 0 4px !important;
+          background: #7e22ce !important;
+          opacity: 0.4 !important;
+          border-radius: 9999px !important;
+          transition: all 0.3s ease !important;
+          cursor: pointer !important;
+        }
+        .swiper-pagination-bullet-active {
+          transform: scale(1.2) !important;
+          opacity: 1 !important;
+          background: #a855f7 !important;
+        }
+      `}</style>
     </section>
   );
-};
-
-export default Testimonials;
+}
