@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -45,29 +45,35 @@ function SkillBar({
 }) {
   const [animatedLevel, setAnimatedLevel] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const skillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
           setTimeout(() => {
             setAnimatedLevel(skill.level);
-          }, index * 100);
+          }, index * 100 + 200); // Added base delay
+          observer.disconnect(); // Disconnect after animation starts
         }
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+      }
     );
 
-    const element = document.getElementById(`skill-${index}`);
-    if (element) observer.observe(element);
+    if (skillRef.current) {
+      observer.observe(skillRef.current);
+    }
 
     return () => observer.disconnect();
-  }, [skill.level, index]);
+  }, [skill.level, index, isVisible]);
 
   return (
-    <div
-      id={`skill-${index}`}
+    <div 
+      ref={skillRef}
       className="group bg-[#1a1a2e] p-5 rounded-xl border border-gray-700/60 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-1"
     >
       <div className="flex justify-between items-start mb-4">
@@ -81,7 +87,12 @@ function SkillBar({
         </div>
         <div className="text-right ml-4">
           <div className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-            {animatedLevel}%
+            <span 
+              className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+              style={{ transitionDelay: `${index * 100 + 500}ms` }}
+            >
+              {animatedLevel}%
+            </span>
           </div>
         </div>
       </div>
@@ -89,8 +100,11 @@ function SkillBar({
       <div className="relative">
         <div className="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden">
           <div
-            className="h-full bg-teal-400 rounded-full transition-all duration-1000 ease-out relative"
-            style={{ width: isVisible ? `${animatedLevel}%` : "0%" }}
+            className="h-full bg-gradient-to-r from-teal-400 to-teal-500 rounded-full transition-all duration-1500 ease-out relative"
+            style={{ 
+              width: isVisible ? `${skill.level}%` : "0%",
+              transitionDelay: `${index * 100 + 300}ms`
+            }}
           >
             {/* Subtle shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse opacity-75"></div>
@@ -103,7 +117,7 @@ function SkillBar({
 
 export default function ExpertiseTools() {
   return (
-    <section className="py-16 px-4 text-white relative ">
+    <section id="skills" className="py-16 px-4 text-white relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-teal-400">Expertise</h2>

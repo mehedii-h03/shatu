@@ -21,8 +21,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <ResumeComponent />
         <Services />
+        <ResumeComponent />
         <Portfolio />
         <ExpertiseTools />
         <Testimonials />

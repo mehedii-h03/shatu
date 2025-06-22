@@ -3,8 +3,8 @@ import { Calendar, Award, GraduationCap, Briefcase } from "lucide-react";
 
 const ResumeComponent = () => {
   return (
-    <div className="text-white p-6 mt-16">
-      <div className="">
+    <section id="profile" className="text-white p-6 mt-16">
+      <div>
         {/* Header */}
         <div className=" p-8">
           <h1 className="text-3xl font-bold text-white mb-2">
@@ -170,7 +170,7 @@ const ResumeComponent = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

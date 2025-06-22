@@ -73,6 +73,7 @@ const Services = () => {
 
   return (
     <section
+      id="services"
       ref={servicesRef}
       className="text-white py-16 px-4 relative to-gray-900/10"
     >
