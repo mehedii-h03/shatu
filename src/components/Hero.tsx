@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 
-import ProfileImage from "@/assets/profileImage.webp";
+import ProfileImage from "@/assets/profileImage.png";
 
 const Hero = () => {
   const [typedText, setTypedText] = useState("");

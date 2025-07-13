@@ -54,13 +54,13 @@ function SkillBar({
           setIsVisible(true);
           setTimeout(() => {
             setAnimatedLevel(skill.level);
-          }, index * 100 + 200); // Added base delay
-          observer.disconnect(); // Disconnect after animation starts
+          }, index * 100 + 200);
+          observer.disconnect();
         }
       },
-      { 
+      {
         threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px"
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -72,23 +72,26 @@ function SkillBar({
   }, [skill.level, index, isVisible]);
 
   return (
-    <div 
+    <div
       ref={skillRef}
-      className="group bg-[#1a1a2e] p-5 rounded-xl border border-gray-700/60 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-1"
+      className="group bg-[#1a1a2e] p-5 rounded-xl border border-gray-700/60 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-1 h-full flex flex-col"
     >
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex-1">
-          <h3 className="text-base font-semibold mb-2 text-white group-hover:text-purple-300 transition-colors duration-300">
+      {/* Header section with fixed height */}
+      <div className="flex justify-between items-start mb-4 min-h-[72px]">
+        <div className="flex-1 pr-4">
+          <h3 className="text-base font-semibold mb-2 text-white group-hover:text-purple-300 transition-colors duration-300 leading-tight min-h-[40px] flex items-start">
             {skill.title}
           </h3>
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-300 border border-gray-600/50">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-300 border border-gray-600/50 whitespace-nowrap">
             {skill.category}
           </span>
         </div>
-        <div className="text-right ml-4">
+        <div className="text-right flex-shrink-0">
           <div className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-            <span 
-              className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            <span
+              className={`transition-all duration-1000 ease-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
               style={{ transitionDelay: `${index * 100 + 500}ms` }}
             >
               {animatedLevel}%
@@ -97,13 +100,14 @@ function SkillBar({
         </div>
       </div>
 
-      <div className="relative">
-        <div className="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden">
+      {/* Progress bar section */}
+      <div className="relative mt-auto">
+        <div className="w-full bg-gray-700/50 rounded-full h-1.5 overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-teal-400 to-teal-500 rounded-full transition-all duration-1500 ease-out relative"
-            style={{ 
+            style={{
               width: isVisible ? `${skill.level}%` : "0%",
-              transitionDelay: `${index * 100 + 300}ms`
+              transitionDelay: `${index * 100 + 300}ms`,
             }}
           >
             {/* Subtle shimmer effect */}
