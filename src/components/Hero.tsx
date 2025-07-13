@@ -58,7 +58,7 @@ const Hero = () => {
 
           <div className="flex space-x-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/fardous-akter-shatu"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
@@ -76,7 +76,7 @@ const Hero = () => {
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/FardousAkterShatu"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
@@ -85,7 +85,7 @@ const Hero = () => {
               <FaFacebook className="w-5 h-5" />
             </a>
             <a
-              href="https://telegram.org"
+              href="https://t.me/F_Shatu"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-colors"
@@ -103,7 +103,7 @@ const Hero = () => {
               Hire Me
             </a>
             <a
-              href="#portfolio"
+              href="#works"
               className="bg-transparent border-2 border-teal-500 text-teal-400 py-3 px-6 rounded-full font-medium hover:bg-teal-900/30 transition-all"
             >
               View Work

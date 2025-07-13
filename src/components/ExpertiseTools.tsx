@@ -8,7 +8,8 @@ import {
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import { SiMeta, SiCanva, SiCapacitor } from "react-icons/si";
+import { SiMeta, SiCanva } from "react-icons/si";
+import Capcut from "@/assets/icons/capcut.svg";
 
 const expertise = [
   { title: "Social Media Optimization (SMO)", level: 98, category: "Strategy" },
@@ -33,7 +34,7 @@ const platforms = [
   { icon: <FaLinkedinIn />, label: "LinkedIn" },
   { icon: <SiMeta />, label: "Meta Ads" },
   { icon: <SiCanva />, label: "Canva" },
-  { icon: <SiCapacitor />, label: "CapCut" },
+  { icon: <Capcut />, label: "CapCut" },
 ];
 
 function SkillBar({
@@ -77,14 +78,14 @@ function SkillBar({
       className="group bg-[#1a1a2e] p-5 rounded-xl border border-gray-700/60 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-1 h-full flex flex-col"
     >
       {/* Header section with fixed height */}
-      <div className="flex justify-between items-start mb-4 min-h-[72px]">
+      <div className="flex justify-between items-start mb-4 min-h-[52px]">
         <div className="flex-1 pr-4">
           <h3 className="text-base font-semibold mb-2 text-white group-hover:text-purple-300 transition-colors duration-300 leading-tight min-h-[40px] flex items-start">
             {skill.title}
           </h3>
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-300 border border-gray-600/50 whitespace-nowrap">
+          {/* <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-700/50 text-gray-300 border border-gray-600/50 whitespace-nowrap">
             {skill.category}
-          </span>
+          </span> */}
         </div>
         <div className="text-right flex-shrink-0">
           <div className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
@@ -102,7 +103,7 @@ function SkillBar({
 
       {/* Progress bar section */}
       <div className="relative mt-auto">
-        <div className="w-full bg-gray-700/50 rounded-full h-1.5 overflow-hidden">
+        <div className="w-full bg-gray-700/50 rounded-full h-1 overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-teal-400 to-teal-500 rounded-full transition-all duration-1500 ease-out relative"
             style={{

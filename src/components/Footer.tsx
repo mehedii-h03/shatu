@@ -7,7 +7,7 @@ import {
   FaFacebook,
   FaTelegram,
   FaEnvelope,
-  FaPhone,
+  // FaPhone,
   FaMapMarkerAlt,
   FaArrowUp,
 } from "react-icons/fa";
@@ -61,7 +61,7 @@ const Footer = () => {
                 <p className="text-teal-400 font-medium">Connect with me:</p>
                 <div className="flex space-x-4">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/fardous-akter-shatu"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-all transform hover:scale-110"
@@ -79,7 +79,7 @@ const Footer = () => {
                     <FaInstagram className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/FardousAkterShatu"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-all transform hover:scale-110"
@@ -88,7 +88,7 @@ const Footer = () => {
                     <FaFacebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://telegram.org"
+                    href="https://t.me/F_Shatu"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-800 p-3 rounded-full hover:bg-teal-700 transition-all transform hover:scale-110"
@@ -158,15 +158,15 @@ const Footer = () => {
                   <div>
                     <p className="text-gray-300 text-sm">Email</p>
                     <a
-                      href="mailto:hello@fardous.com"
+                      href="mailto:fardousaktershatu@gmail.com"
                       className="text-white hover:text-teal-400 transition-colors"
                     >
-                      hello@fardous.com
+                      fardousaktershatu@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-3">
+                {/* <div className="flex items-center space-x-3">
                   <div className="bg-gray-800 p-2 rounded-full">
                     <FaPhone className="w-4 h-4 text-teal-400" />
                   </div>
@@ -179,7 +179,7 @@ const Footer = () => {
                       +123 456 7890
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center space-x-3">
                   <div className="bg-gray-800 p-2 rounded-full">

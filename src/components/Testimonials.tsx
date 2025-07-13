@@ -8,28 +8,28 @@ import { Pagination, Autoplay } from "swiper/modules";
 const testimonials = [
   {
     name: "Shohag Islam",
-    role: "Owner, Eureca Fashion",
-    text: "I worked with Shatu to set up my business page including logo design, ads, and page management. Very professional and sincere.",
+    role: "Owner of Eureca Fashion",
+    text: "I worked with Shatu to set up my business page, including logo design, cover design, ad campaigns, and overall page management. She handled everything very professionally and with great sincerity. I am fully satisfied with her service.",
   },
   {
     name: "Tasnina Trisha",
-    role: "CEO, Ahliya's Home Schooling",
-    text: "She is always sincere in her work. I've taken services for Instagram and Facebook. Very pleased with the results.",
+    role: "CEO of Ahliya's Home Schooling",
+    text: "May Allah bless her time and work with barakah. I have always found her sincere in her work. I have taken services for both Instagram and Facebook.  Alhamdulillah, I’m pleased with her consultation as well.",
   },
   {
     name: "Marian Akter",
     role: "Graphics Designer",
-    text: "Shatu helped me a lot with optimizing my social media presence. Highly recommended!",
+    text: "Shatu is truly dedicated to her work. She has helped me a lot with my social media optimization (Facebook and LinkedIn). Wishing her continued success!",
   },
   {
     name: "Farah Sharna",
     role: "Graphics Designer",
-    text: "Handled my Facebook page very well. Extremely sincere and dedicated. May Allah bless her.",
+    text: "Shatu did some work on my Facebook, and Ma Sha Allah, she handled everything very professionally. She's also incredibly sincere and dedicated. May Allah bless her with abundant barakah.",
   },
   {
-    name: "Anonymous Client",
-    role: "Business Owner",
-    text: "She manages my marketing and campaigns with great responsibility. Perfect for reliable digital services.",
+    name: "Alamgir Hossain",
+    role: "Businessman",
+    text: "For the past year, Shatu has been handling the promotion, marketing strategies, and ad campaigns for my business page with great sincerity and responsibility.\nIf you're looking for reliable digital marketing services or consultation, you can confidently take her support.",
   },
 ];
 
@@ -43,8 +43,8 @@ export default function Testimonials() {
             Testimonials
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Don&apos;t just take our word for it - hear what our clients have
-            to say about their experience
+            Don&apos;t just take our word for it - hear what our clients have to
+            say about their experience
           </p>
         </div>
 
@@ -115,7 +115,9 @@ export default function Testimonials() {
                           </svg>
                         ))}
                       </div>
-                      <span className="text-xs sm:text-sm text-gray-400 ml-2">5.0</span>
+                      <span className="text-xs sm:text-sm text-gray-400 ml-2">
+                        5.0
+                      </span>
                     </div>
                   </div>
                 </div>
