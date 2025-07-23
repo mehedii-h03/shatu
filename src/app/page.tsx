@@ -22,8 +22,8 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <ResumeComponent />
         <Portfolio />
+        <ResumeComponent />
         <ExpertiseTools />
         <Testimonials />
         <Contact />
