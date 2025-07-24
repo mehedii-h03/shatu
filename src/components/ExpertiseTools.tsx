@@ -122,7 +122,7 @@ function SkillBar({
 
 export default function ExpertiseTools() {
   return (
-    <section id="skills" className="py-16 px-4 text-white relative">
+    <section id="skills" className="py-16 text-white relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-teal-400">Expertise</h2>

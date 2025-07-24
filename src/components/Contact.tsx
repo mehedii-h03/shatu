@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="text-white py-16 md:py-24 px-4 md:px-8 relative overflow-hidden"
+      className="text-white py-16 md:py-24 relative overflow-hidden"
     >
       {/* Minimal decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -59,8 +59,8 @@ const Contact = () => {
             Let&apos;s Work Together
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Ready to elevate your brand? Get in touch and let&apos;s create something
-            amazing together.
+            Ready to elevate your brand? Get in touch and let&apos;s create
+            something amazing together.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const Contact = () => {
                       href="mailto:hello@fardous.com"
                       className="text-gray-300 hover:text-teal-400 transition-colors"
                     >
-                      hello@fardous.com
+                      fardousaktershatu@gmail.com
                     </a>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const Contact = () => {
                       href="tel:+1234567890"
                       className="text-gray-300 hover:text-teal-400 transition-colors"
                     >
-                      +123 456 7890
+                      +8801874262668
                     </a>
                   </div>
                 </div>

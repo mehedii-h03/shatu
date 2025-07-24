@@ -38,7 +38,7 @@ const Portfolio = () => {
     <section
       id="works"
       ref={portfolioRef}
-      className="text-white py-16 md:py-24 px-4 md:px-8"
+      className="text-white py-16 md:py-24"
     >
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
@@ -81,7 +81,7 @@ const Portfolio = () => {
               </div>
 
               {/* Images Carousel */}
-              <div className="relative group/swiper px-8">
+              <div className="relative group/swiper">
                 <Swiper
                   modules={[Autoplay, Navigation]}
                   spaceBetween={20}

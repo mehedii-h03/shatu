@@ -6,10 +6,10 @@ import AdvanceDigitalMarketingCertificate from "@/assets/images/certificate/Adva
 
 const ResumeComponent = () => {
   return (
-    <section id="profile" className="text-white p-6 mt-16">
+    <section id="profile" className="text-white mt-16">
       <div>
         {/* Header */}
-        <div className=" p-8">
+        <div className="">
           <h1 className="text-3xl font-bold text-white mb-2">
             Professional Profile
           </h1>
@@ -21,7 +21,7 @@ const ResumeComponent = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-0">
           {/* Experience Section - Left Side */}
-          <div className="p-8 ">
+          <div className="mt-6">
             <div className="flex items-center mb-8">
               <Briefcase className="w-6 h-6 text-teal-400 mr-3" />
               <h2 className="text-2xl font-semibold text-white">Experience</h2>
@@ -98,7 +98,7 @@ const ResumeComponent = () => {
           </div>
 
           {/* Education Section - Right Side */}
-          <div className="p-8">
+          <div className="">
             <div className="flex items-center mb-8">
               <GraduationCap className="w-6 h-6 text-teal-400 mr-3" />
               <h2 className="text-2xl font-semibold text-white">Education</h2>
@@ -174,7 +174,7 @@ const ResumeComponent = () => {
         </div>
 
         {/* Certificates Section */}
-        <div className="mt-16 p-8">
+        <div className="mt-16">
           <div className="flex items-center mb-8">
             <Award className="w-6 h-6 text-teal-400 mr-3" />
             <h2 className="text-2xl font-semibold text-white">

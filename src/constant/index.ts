@@ -50,13 +50,13 @@ import sMImage6 from "@/assets/images/SocialMediaBasic/6.png";
 import sMImage7 from "@/assets/images/SocialMediaBasic/7.png";
 
 // social media premium
-import sMPImage1 from "@/assets/images/SocialMediaBasic/1.png";
-import sMPImage2 from "@/assets/images/SocialMediaBasic/2.png";
-import sMPImage3 from "@/assets/images/SocialMediaBasic/3.png";
-import sMPImage4 from "@/assets/images/SocialMediaBasic/4.png";
-import sMPImage5 from "@/assets/images/SocialMediaBasic/5.png";
-import sMPImage6 from "@/assets/images/SocialMediaBasic/6.png";
-import sMPImage7 from "@/assets/images/SocialMediaBasic/7.png";
+import sMPImage1 from "@/assets/images/SocialMediaPremium/1.jpg";
+import sMPImage2 from "@/assets/images/SocialMediaPremium/2.jpg";
+import sMPImage3 from "@/assets/images/SocialMediaPremium/3.jpg";
+import sMPImage4 from "@/assets/images/SocialMediaPremium/4.jpg";
+import sMPImage5 from "@/assets/images/SocialMediaPremium/5.jpg";
+import sMPImage6 from "@/assets/images/SocialMediaPremium/6.jpg";
+import sMPImage7 from "@/assets/images/SocialMediaPremium/7.png";
 
 export const portfolioCategories = [
   {
