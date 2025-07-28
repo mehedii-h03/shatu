@@ -182,34 +182,52 @@ const ResumeComponent = () => {
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Digital Marketing Certificate */}
-            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden hover:border-teal-500 transition-all duration-300">
-              <div className="h-[450px] w-full">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden hover:border-teal-500 transition-all duration-300 group">
+              <div className="aspect-video w-full bg-gray-900">
                 <Image
                   src={DigitalMarketingCertificate}
                   alt="Digital Marketing Certificate"
-                  width={600}
+                  width={800}
                   height={450}
-                  className="w-full h-full object-cover"
-                  quality={90}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  quality={95}
                   placeholder="blur"
+                  priority
                 />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-medium text-white mb-2">
+                  Digital Marketing Certificate
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Professional certification in digital marketing fundamentals
+                </p>
               </div>
             </div>
 
             {/* Advanced Digital Marketing Certificate */}
-            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden hover:border-teal-500 transition-all duration-300">
-              <div className="h-[450px] w-full">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden hover:border-teal-500 transition-all duration-300 group">
+              <div className="aspect-video w-full bg-gray-900">
                 <Image
                   src={AdvanceDigitalMarketingCertificate}
                   alt="Advanced Digital Marketing Certificate"
-                  width={600}
+                  width={800}
                   height={450}
-                  className="w-full h-full object-cover"
-                  quality={90}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  quality={95}
                   placeholder="blur"
+                  priority
                 />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-medium text-white mb-2">
+                  Advanced Digital Marketing Certificate
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Advanced certification in digital marketing strategies
+                </p>
               </div>
             </div>
           </div>
