@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,32 +7,73 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { portfolioCategories } from "@/constant";
+import ImagePopup from "./ImagePopUp";
 
+export interface PortfolioItem {
+  id: string | number;
+  image: StaticImageData;
+}
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const portfolioRef = useRef(null);
+  const portfolioRef = useRef<HTMLElement | null>(null);
+
+  // popup state
+  const [popup, setPopup] = useState<{
+    isOpen: boolean;
+    image: string | StaticImageData | null;
+    title: string;
+    categoryItems: PortfolioItem[];
+    currentIndex: number;
+  }>({
+    isOpen: false,
+    image: null,
+    title: "",
+    categoryItems: [],
+    currentIndex: 0,
+  });
 
   // Intersection Observer for scroll-triggered animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.2 }
     );
 
-    if (portfolioRef.current) {
-      observer.observe(portfolioRef.current);
-    }
+    if (portfolioRef.current) observer.observe(portfolioRef.current);
 
     return () => {
-      if (portfolioRef.current) {
-        observer.unobserve(portfolioRef.current);
-      }
+      if (portfolioRef.current) observer.unobserve(portfolioRef.current);
     };
   }, []);
+
+  const openPopup = (
+    image: string | StaticImageData,
+    title: string,
+    categoryItems: PortfolioItem[],
+    index: number
+  ) => {
+    setPopup({
+      isOpen: true,
+      image,
+      title,
+      categoryItems,
+      currentIndex: index,
+    });
+  };
+
+  const closePopup = () => {
+    setPopup((prev) => ({ ...prev, isOpen: false }));
+  };
+
+  const navigatePopup = (index: number) => {
+    setPopup((prev) => ({
+      ...prev,
+      currentIndex: index,
+      image: prev.categoryItems[index].image,
+    }));
+  };
 
   return (
     <section
@@ -104,9 +145,19 @@ const Portfolio = () => {
                   }}
                   className="group/swiper"
                 >
-                  {category.items.map((item) => (
+                  {category.items.map((item: PortfolioItem, i: number) => (
                     <SwiperSlide key={item.id}>
-                      <div className="group cursor-pointer">
+                      <div
+                        className="group cursor-pointer"
+                        onClick={() =>
+                          openPopup(
+                            item.image,
+                            category.title,
+                            category.items,
+                            i
+                          )
+                        }
+                      >
                         <div className="relative aspect-square overflow-hidden rounded-xl bg-gray-900 shadow-xl">
                           <Image
                             fill
@@ -116,9 +167,7 @@ const Portfolio = () => {
                           />
 
                           {/* Hover Overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className="absolute bottom-4 left-4 right-4"></div>
-                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                       </div>
                     </SwiperSlide>
@@ -166,6 +215,17 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+
+      {/* Popup Component */}
+      <ImagePopup
+        isOpen={popup.isOpen}
+        onClose={closePopup}
+        image={popup.image as StaticImageData}
+        title={popup.title}
+        categoryItems={popup.categoryItems}
+        currentIndex={popup.currentIndex}
+        onNavigate={navigatePopup}
+      />
 
       <style jsx global>{`
         .gradient-text {

@@ -83,15 +83,15 @@ export const portfolioCategories = [
         image: acImage5,
       },
       {
-        id: 5,
+        id: 6,
         image: acImage6,
       },
       {
-        id: 5,
+        id: 7,
         image: acImage7,
       },
       {
-        id: 5,
+        id: 8,
         image: acImage8,
       },
     ],
@@ -100,31 +100,27 @@ export const portfolioCategories = [
     title: "Facebook Marketing",
     items: [
       {
-        id: 6,
+        id: 9,
         image: fbMImage1,
       },
       {
-        id: 7,
+        id: 10,
         image: fbMImage2,
       },
       {
-        id: 8,
+        id: 11,
         image: fbMImage3,
       },
       {
-        id: 9,
+        id: 12,
         image: fbMImage4,
       },
       {
-        id: 10,
-        image: fbMImage4,
-      },
-      {
-        id: 10,
+        id: 13,
         image: fbMImage5,
       },
       {
-        id: 10,
+        id: 14,
         image: fbMImage6,
       },
     ],
@@ -133,27 +129,27 @@ export const portfolioCategories = [
     title: "Instagram Marketing",
     items: [
       {
-        id: 11,
+        id: 15,
         image: igMImage1,
       },
       {
-        id: 12,
+        id: 16,
         image: igMImage2,
       },
       {
-        id: 13,
+        id: 17,
         image: igMImage3,
       },
       {
-        id: 14,
+        id: 18,
         image: igMImage4,
       },
       {
-        id: 15,
+        id: 19,
         image: igMImage5,
       },
       {
-        id: 15,
+        id: 20,
         image: igMImage6,
       },
     ],
@@ -162,19 +158,19 @@ export const portfolioCategories = [
     title: "Pinterest Marketing",
     items: [
       {
-        id: 16,
+        id: 21,
         image: pMImage1,
       },
       {
-        id: 17,
+        id: 22,
         image: pMImage2,
       },
       {
-        id: 18,
+        id: 23,
         image: pMImage3,
       },
       {
-        id: 19,
+        id: 24,
         image: pMImage4,
       },
     ],
@@ -183,31 +179,31 @@ export const portfolioCategories = [
     title: "Social Media Post Design (Basic)",
     items: [
       {
-        id: 16,
+        id: 26,
         image: sMImage1,
       },
       {
-        id: 17,
+        id: 27,
         image: sMImage2,
       },
       {
-        id: 18,
+        id: 28,
         image: sMImage3,
       },
       {
-        id: 19,
+        id: 29,
         image: sMImage4,
       },
       {
-        id: 20,
+        id: 30,
         image: sMImage5,
       },
       {
-        id: 20,
+        id: 31,
         image: sMImage6,
       },
       {
-        id: 20,
+        id: 32,
         image: sMImage7,
       },
     ],
@@ -216,31 +212,31 @@ export const portfolioCategories = [
     title: "Social Media Post Design (Premium)",
     items: [
       {
-        id: 16,
+        id: 33,
         image: sMPImage1,
       },
       {
-        id: 17,
+        id: 34,
         image: sMPImage2,
       },
       {
-        id: 18,
+        id: 35,
         image: sMPImage3,
       },
       {
-        id: 19,
+        id: 36,
         image: sMPImage4,
       },
       {
-        id: 20,
+        id: 37,
         image: sMPImage5,
       },
       {
-        id: 20,
+        id: 38,
         image: sMPImage6,
       },
       {
-        id: 20,
+        id: 39,
         image: sMPImage7,
       },
     ],
