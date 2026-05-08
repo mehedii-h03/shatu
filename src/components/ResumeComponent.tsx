@@ -33,6 +33,26 @@ const ResumeComponent = () => {
                 <div className="absolute left-0 top-2 w-3 h-3 bg-teal-500 rounded-full"></div>
                 <div className="ml-6">
                   <h3 className="text-lg font-semibold text-white mb-1">
+                    Social Media Community Manager
+                  </h3>
+                  <p className="text-teal-400 font-medium mb-2">Tiflah</p>
+                  <div className="flex items-center text-gray-400 text-sm mb-3">
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>May 2025 – Present</span>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Managing customer interactions, responding to messages and
+                    comments, and maintaining brand voice across social media
+                    platforms.
+                  </p>
+                </div>
+              </div>
+
+              {/* Facebook Ads Specialist */}
+              <div className="relative">
+                <div className="absolute left-0 top-2 w-3 h-3 bg-teal-500 rounded-full"></div>
+                <div className="ml-6">
+                  <h3 className="text-lg font-semibold text-white mb-1">
                     Facebook Ads Specialist
                   </h3>
                   <p className="text-teal-400 font-medium mb-2">
